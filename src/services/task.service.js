@@ -7,20 +7,21 @@ class TaskService {
     task() {
       return axios.get(API_URL + 'createTask');
     }
-    createTask(taskName, taskDescription, userId, sharedWith) {
+    createTask(taskName, taskDescription, userId, sharedWith,status) {
       return axios.post(API_URL + "createTask/submit", {
         taskName,
         taskDescription,
         userId,
-        sharedWith
+        sharedWith,
+        status
       });
     }
 
-    addComment(text, userId, taskId ) {
-      return axios.post(API_URL + "view/add/comment", {
+    addComment(text, userId, taskId) {
+      return axios.put(API_URL + "view/add/comment", {
         text,
         userId,
-        taskId
+        taskId,
       });
     }
 
@@ -36,6 +37,31 @@ class TaskService {
     getUserDetail() {
       return axios.get(API_URL + 'AllLikesUserData');
     }
+
+    getTaskData() {
+      return axios.get(API_URL + 'AllUserTaskData');
+    }
+    getAdminTaskData() {
+      return axios.get(API_URL + 'AllAdminTaskData');
+    }
+    getModeratorTaskData() {
+      return axios.get(API_URL + 'AllModeratorTaskData');
+    }
+    getCommentData() {
+      return axios.get(API_URL + 'AllCommentData');
+    }
+    getCommentUserData() {
+      return axios.get(API_URL + 'AllCommentUserData');
+    }
+
+    getRestrictedTask() {
+      return axios.get(API_URL + 'restricted');
+    }
+
+    getALLSharedTask() {
+      return axios.get(API_URL + 'AllCommonTaskData');
+    }
+    
     
 }
 

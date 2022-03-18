@@ -119,7 +119,7 @@ export default class Dashboard extends Component {
       <div className="container">
         <header className="jumbotron">
           <h3>Create Task</h3>
-          <strong>{currentUser.username}</strong> 
+          <span class="badge badge-info">{currentUser.username}</span>
           <Form
             onSubmit={this.handleSubmit}
             ref={c => {

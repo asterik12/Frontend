@@ -114,7 +114,7 @@ export default class editTask extends Component {
           url: `http://localhost:8080/api/task/edit/${this.state.id}`,
           data: newData
         }).then(response => {
-          // this.props.history.push('/profile')
+          this.props.history.push('/user')
           // console.log(response)
         }).catch(err => console.log(err));
       }
@@ -131,7 +131,7 @@ export default class editTask extends Component {
           createDate: this.state.createDate,
           updatedDate: Date.now(),
         }
-       
+       console.log("Date: ",Date.now())
         console.log(this.state);
     
         if (this.checkBtn.context._errors.length === 0) {
@@ -151,7 +151,7 @@ export default class editTask extends Component {
         <div className="container">
         <header className="jumbotron">
           <h3>Edit Task</h3>
-          <strong>{currentUser.username}</strong> 
+          <span class="badge badge-info">{currentUser.username}</span> 
           <Form
             onSubmit={this.handleSubmit}
             ref={c => {

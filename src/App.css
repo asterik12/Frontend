@@ -47,3 +47,20 @@ label {
 .col{
   padding: 0px !important;
 }
+.card-body{
+  padding-bottom: 1% !important;
+}
+.card-footer-actions {
+  padding: 2px 20px;
+  background-color: rgba(0,0,0,.03);
+  border-top: 1px solid rgba(0,0,0,.125);
+}
+.show-action-content{
+text-decoration: none;
+}
+.show-action-content:hover{
+  color: rgb(73, 73, 240);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
